@@ -1,9 +1,15 @@
 import React from 'react';
+import Bannar from './Bannar';
+import FriendData from './FriendData';
+
+
 
 const Homepage = () => {
+    
     return (
         <div>
-            Homepage
+            <Bannar />
+            <FriendData />
         </div>
     );
 };
