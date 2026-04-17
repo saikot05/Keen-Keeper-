@@ -8,6 +8,7 @@ const TimelineProvider = ({children}) => {
     useEffect(()=> {
         const saved = getTimelineFromLocalDB();
         if(saved?.length) setTimeline(saved)
+            
     },[])
 
     const addEntry = (entry) =>{

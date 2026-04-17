@@ -18,6 +18,14 @@ const Timeline = () => {
     }
 
     const filteredTimeline = filter === 'All' ? timeline : timeline.filter(item => item.title.includes(filter));
+    if(timeline.length === 0){
+        return (
+            <div className='container mx-auto px-4 py-8'>
+                <h2 className='text-3xl font-bold mb-6'>Timeline</h2>
+                <p className='bg-gray-200 shadow-sm p-5 text-center text-xl font-bold'>No data found</p>
+            </div>
+        )
+    }
     return (
         <div className='container mx-auto px-4 py-8'>
             <h2 className='text-3xl font-bold mb-6'>Timeline</h2>
@@ -36,6 +44,7 @@ const Timeline = () => {
             </div>
   
             {
+                filteredTimeline.length === 0 ? (<p className='text-gray-400 text-sm'>No {filter} entries found</p>):
                 filteredTimeline.map((item,ind)=>{
                     return <div key={ind} className='bg-white shadow-sm rounded-lg mb-5  p-4 flex items-center gap-4'>
                        <div className='w-10 h-10'>
