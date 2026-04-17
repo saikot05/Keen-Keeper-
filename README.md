@@ -1,16 +1,47 @@
-# React + Vite
+# 📅 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A friendship management web app that helps you stay connected with the people who matter most.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 Description
 
-## React Compiler
+KeenKeeper is a responsive web application designed to help you track and maintain your friendships. It reminds you when it's time to reach out, logs your interactions, and gives you a visual overview of your social health — so no friendship ever slips through the cracks.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js** — Component-based UI framework
+- **React Router DOM** — Client-side routing and navigation
+- **Recharts** — Chart library for the Analytics/Stats page
+- **Tailwind CSS** — Utility-first CSS framework for responsive design
+- ** React Toastify** — Toast notifications
+- **JSON** — Local data source for friend profiles
+
+---
+
+## ✨ Key Features
+
+### 1. 👫 Friend Card Dashboard
+Browse all your friends at a glance in a responsive 4-column grid. Each card displays the friend's photo, name, days since last contact, tags, and a color-coded status badge (`overdue`, `almost due`, or `on-track`). Click any card to visit their detailed profile page.
+
+### 2. 📞 Quick Check-In & Timeline Logging
+From a friend's detail page, log interactions instantly using the **Call**, **Text**, or **Video** buttons. Each click automatically creates a timestamped entry on the Timeline page and triggers a toast notification — keeping your interaction history always up to date.
+
+### 3. 📊 Friendship Analytics
+The Stats page features a **Pie Chart** (powered by Recharts) that visualizes the breakdown of your interactions by type — Call, Text, and Video — giving you a clear picture of how you're staying in touch.
+
+---
+
+## 📄 Pages
+
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `/` | Banner, summary cards, and all friend cards |
+| Friend Detail | `/friends/:id` | Full profile, stats, goals, and quick check-in |
+| Timeline | `/timeline` | Full history of all logged interactions |
+| Stats | `/stats` | Friendship analytics with pie chart |
+| 404 | `*` | Custom not-found page for invalid routes |
+
+---
