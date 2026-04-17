@@ -9,4 +9,7 @@ const addTimelineToLocalDB = (entry) => {
     localStorage.setItem("timeline", JSON.stringify(allEntries));
 }
 
-export { getTimelineFromLocalDB, addTimelineToLocalDB }
+export {
+    getTimelineFromLocalDB,
+    addTimelineToLocalDB
+}

@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { TimelineContext } from '../../components/context/TimelineContext';
-import {friends} from '././'
+
 const BannarCard = () => {
     const {timeline} = useContext(TimelineContext)
+    const [friends,setFriends] = useState([]);
+    useEffect(()=>{
+        fetch("/data.json").then(res=>res.json()).then(data => setFriends(data));
 
-    const totalFriends = timeline.length;
+    },[]);
+    
+    const totalFriends = friends.length;
 
     const onTrack = timeline.filter(item => item.title.includes('Call')).length;
 

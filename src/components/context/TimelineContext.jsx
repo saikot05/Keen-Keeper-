@@ -1,14 +1,15 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { addTimelineToLocalDB, getTimelineFromLocalDB } from '../../utils/LocalDB';
+import React, { createContext, useEffect, useState } from 'react';
+import {  addTimelineToLocalDB, getTimelineFromLocalDB } from '../../utils/LocalDB';
 
 export const TimelineContext = createContext();
 
 const TimelineProvider = ({children}) => {
     const [timeline,setTimeline] = useState([]);
+    
     useEffect(()=> {
         const saved = getTimelineFromLocalDB();
         if(saved?.length) setTimeline(saved)
-            
+        
     },[])
 
     const addEntry = (entry) =>{
@@ -16,6 +17,8 @@ const TimelineProvider = ({children}) => {
         setTimeline(updated);
         addTimelineToLocalDB(entry)
     }
+
+    
     const data = {
         timeline,
         setTimeline,
